@@ -1,0 +1,686 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #222;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ==============================
+   Header
+   ============================== */
+
+.top-header {
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 18px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 14px;
+}
+
+.header-actions a {
+    color: #374151;
+    text-decoration: none;
+}
+
+.header-actions a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   Main
+   ============================== */
+
+.dashboard-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 45px 0;
+
+    flex: 1;
+}
+
+.welcome-section {
+    margin-bottom: 35px;
+}
+
+.welcome-section h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.welcome-section p {
+    color: #64748b;
+}
+
+
+/* ==============================
+   Admin Cards
+   ============================== */
+
+.admin-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.admin-card {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, 0.04);
+}
+
+.admin-card h3 {
+    margin-bottom: 10px;
+}
+
+.admin-card p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+}
+
+.admin-card button {
+    border: none;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.admin-card button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* ==============================
+   Footer
+   ============================== */
+
+.site-footer {
+    background-color: #1e293b;
+
+    color: #cbd5e1;
+
+    padding: 18px 0;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 13px;
+}
+
+
+/* ==============================
+   Responsive
+   ============================== */
+
+@media (max-width: 700px) {
+
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-container {
+        width: 92%;
+    }
+
+    .dashboard-container {
+        width: 92%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
+
+/* ==============================
+   Manage Exams
+============================== */
+
+.admin-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: #666;
+}
+
+
+/* Buttons */
+
+.primary-button,
+.secondary-button,
+.edit-button,
+.delete-button {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.primary-button {
+    background: #2563eb;
+    color: white;
+}
+
+.secondary-button {
+    background: #ddd;
+    color: #222;
+}
+
+.edit-button {
+    background: #f59e0b;
+    color: white;
+    margin-right: 5px;
+}
+
+.delete-button {
+    background: #dc2626;
+    color: white;
+}
+
+.primary-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* Form */
+
+.form-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.hidden {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* Table */
+
+.table-section {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #f5f7fb;
+}
+
+td small {
+    color: #777;
+}
+
+.status-active,
+.status-inactive {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.status-active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* Footer */
+
+.site-footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: #f5f7fb;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* ==============================
+   Manage Exams
+============================== */
+
+.admin-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: #666;
+}
+
+
+/* Buttons */
+
+.primary-button,
+.secondary-button,
+.edit-button,
+.delete-button {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.primary-button {
+    background: #2563eb;
+    color: white;
+}
+
+.secondary-button {
+    background: #ddd;
+    color: #222;
+}
+
+.edit-button {
+    background: #f59e0b;
+    color: white;
+    margin-right: 5px;
+}
+
+.delete-button {
+    background: #dc2626;
+    color: white;
+}
+
+.primary-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* Form */
+
+.form-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.hidden {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* Table */
+
+.table-section {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #f5f7fb;
+}
+
+td small {
+    color: #777;
+}
+
+.status-active,
+.status-inactive {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.status-active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* Footer */
+
+.site-footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: #f5f7fb;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* ==============================
+   Manage Questions
+============================== */
+
+.form-group select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background: white;
+}
+
+.question-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.question-number {
+    font-size: 13px;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.question-text {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.correct-answer {
+    font-size: 14px;
+    color: #555;
+}
+
+.options-area {
+    margin: 15px 0;
+}
+
+.option-item {
+    padding: 9px 12px;
+    margin-bottom: 6px;
+    background: #f5f7fb;
+    border-radius: 5px;
+}
+
+.option-label {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.correct-answer {
+    margin-top: 12px;
+    color: #555;
+}
+
+/* ==============================
+   Student Results
+   ============================== */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.results-table th,
+.results-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.results-table th {
+    font-weight: 600;
+}
+
+.results-table tr:hover {
+    background-color: #f5f7fb;
+}

@@ -1,0 +1,178 @@
+/* ==============================
+   General
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #222;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   Header
+============================== */
+
+.exam-header {
+    background-color: #1e293b;
+    color: white;
+    padding: 18px 0;
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container h1 {
+    font-size: 24px;
+}
+
+.exam-info {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+#timer {
+    background-color: #dc2626;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+
+/* ==============================
+   Exam Container
+============================== */
+
+.exam-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+
+/* ==============================
+   Question Card
+============================== */
+
+.question-card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.question-number {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.question-text {
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   Options
+============================== */
+
+.option {
+    display: block;
+
+    padding: 12px 15px;
+    margin-bottom: 10px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: #f1f5f9;
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+
+/* ==============================
+   Submit
+============================== */
+
+.submit-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#submitBtn {
+    padding: 12px 30px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #2563eb;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#submitBtn:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* ==============================
+   Loading
+============================== */
+
+#loadingMessage {
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
+}
+
+
+/* ==============================
+   Footer
+============================== */
+
+.site-footer {
+    background-color: #1e293b;
+    color: white;
+
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.site-footer .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 14px;
+}

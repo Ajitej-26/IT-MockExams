@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard | IT-MockExams</title>
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<!--Header-->
+<header class="top-header">
+    <div class="header-container">
+        <div class="logo">
+            IT-MockExams
+        </div>
+
+        <div class="header-actions">
+            <span id="studentName">
+                Student
+            </span>
+
+            <span class="separator">|</span>
+            <a href="profile.html"
+               class="profile-link">
+                My Profile
+            </a>
+            
+            <span class="separator">|</span>
+            <a href="#"
+               id="logoutButton"
+               class="logout-link">
+                Logout
+            </a>
+        </div>
+    </div>
+</header>
+
+<!--Main Content -->
+<main class="dashboard-container">
+
+<!-- Welcome Section -->
+   <section class="welcome-section">
+    <h2 id="welcomeMessage">
+        Welcome back..!
+    </h2>
+    <p>
+        Ready to test your skills today?
+    </p>
+</section>
+
+<section class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-title">
+            Available Exams
+        </div>
+        <div
+            class="stat-value"
+            id="availableExams">
+            0
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-title">
+            Exams Completed
+        </div>
+        <div
+            class="stat-value"
+            id="examsCompleted">
+            0
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-title">
+            Average Score
+        </div>
+        <div
+            class="stat-value"
+            id="averageScore">
+            0%
+        </div>
+    </div>
+</section>
+    
+<!--Quick Actions-->
+    <section class="quick-actions">
+        <a href="history.html"
+           class="history-button">
+            📊 Exam History
+        </a>
+    </section>
+
+<!--Available Exams-->
+    <section class="exams-section">
+ 		<div class="section-header">
+            <h2>
+                Available Mock Exams
+            </h2>
+            <p>
+                Choose an exam and start practicing.
+            </p>
+        </div>
+
+<!-- Exams will be loaded from backend -->
+        <div
+            class="exam-grid"
+            id="examGrid">
+        </div>
+
+<!-- Loading Message -->
+        <div
+            id="examLoading"
+            class="exam-message">
+            Loading available exams...
+        </div>
+
+<!-- Error Message -->
+        <div
+            id="examError"
+            class="exam-message error">
+        </div>
+    </section>
+</main>
+
+<!--Footer-->
+<footer class="site-footer">
+    <div class="footer-container">
+        <span>
+            IT-MockExams — Online Mock Examination Portal
+        </span>
+        <span>
+            &copy; 2026 IT-MockExams. All Rights Reserved.
+        </span>
+    </div>
+</footer>
+
+<!-- Dashboard JavaScript -->
+<script src="../js/student/dashboard.js"></script>
+</body>
+</html>

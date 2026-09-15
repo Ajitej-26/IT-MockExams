@@ -1,0 +1,21 @@
+/* ======================================================================
+   css/dashboard.css — student area (leaderboard, profile, result)
+====================================================================== */
+.result-hero{text-align:center;padding:48px 24px;border-bottom:1px solid var(--rule);}
+.score-ring{
+  width:160px;height:160px;border-radius:50%;border:10px solid var(--paper-dark);
+  border-top-color:var(--ochre);border-right-color:var(--ochre);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;margin:0 auto 20px auto;
+  transform:rotate(-45deg);
+}
+.score-ring .inner{transform:rotate(45deg);text-align:center;}
+.score-ring .num{font-family:var(--font-serif);font-size:2.2rem;color:var(--navy);}
+.score-ring .den{font-family:var(--font-mono);font-size:.8rem;color:var(--ink-soft);}
+.result-verdict{font-family:var(--font-mono);letter-spacing:.04em;}
+.leaderboard-row.you{background:#F3E4CE;}
+.leaderboard-row .rank{font-family:var(--font-serif);font-size:1.1rem;color:var(--ochre-dark);}
+.profile-header{display:flex;gap:24px;align-items:center;padding-bottom:24px;border-bottom:1px solid var(--rule);margin-bottom:24px;}
+.avatar{width:76px;height:76px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:1.6rem;}
+.tab-row{display:flex;gap:4px;border-bottom:1px solid var(--rule);margin-bottom:22px;}
+.tab-row button{background:none;border:none;padding:10px 16px;font-size:.9rem;color:var(--ink-soft);border-bottom:2px solid transparent;}
+.tab-row button.active{color:var(--navy);border-bottom-color:var(--ochre);font-weight:600;}

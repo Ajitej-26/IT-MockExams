@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>IT-MockExams - Students</title>
+
+    <link rel="stylesheet"
+          href="../css/admin-dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- ==============================
+         Header
+         ============================== -->
+
+    <header class="top-header">
+
+        <div class="header-container">
+
+            <div class="logo">
+                IT-MockExams
+            </div>
+
+            <div class="header-actions">
+
+                <span id="adminName">
+                    Admin
+                </span>
+
+                <span>|</span>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <span>|</span>
+
+                <a href="#"
+                   id="logoutButton">
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         Main Content
+         ============================== -->
+
+    <main class="dashboard-container">
+
+        <section class="welcome-section">
+
+            <h2>
+                Registered Students
+            </h2>
+
+            <p>
+                View all students registered in IT-MockExams.
+            </p>
+
+        </section>
+
+
+        <!-- ==============================
+             Student Count
+             ============================== -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-title">
+                    Total Students
+                </div>
+
+                <div class="stat-value"
+                     id="studentCount">
+                    0
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             Students Table
+             ============================== -->
+
+        <section class="admin-card">
+
+            <h3>
+                Student List
+            </h3>
+
+            <div class="table-container">
+
+                <table class="results-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Serial.No</th>
+
+                            <th>Full Name</th>
+
+                            <th>Roll Number</th>
+
+                            <th>Email</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="studentsTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         Footer
+         ============================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <span>
+                IT-MockExams — Online Mock Examination Portal
+            </span>
+
+            <span>
+                &copy; 2026 IT-MockExams. All Rights Reserved.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/admin/students.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-MockExams - Student Profile</title>
+    <link rel="stylesheet"
+          href="../css/profile.css">
+</head>
+<body>
+
+
+    <!-- ==============================
+         Header
+         ============================== -->
+
+    <header class="profile-header">
+
+        <div class="header-container">
+
+            <h1>
+                IT-MockExams
+            </h1>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==============================
+         Main
+         ============================== -->
+
+    <main class="profile-container">
+
+        <div class="profile-card">
+
+            <h2>
+                👤Student Profile
+            </h2>
+
+            <p class="subtitle">
+                View your registered account details.
+            </p>
+
+
+            <!-- Loading -->
+
+            <div id="loadingMessage">
+
+                Loading profile...
+
+            </div>
+
+
+            <!-- Profile Details -->
+
+            <div id="profileDetails"
+                 class="profile-details">
+
+
+                <div class="profile-row">
+
+                    <span class="label">
+                        Full Name
+                    </span>
+
+                    <span id="fullName"
+                          class="value">
+                    </span>
+
+                </div>
+
+
+                <div class="profile-row">
+
+                    <span class="label">
+                        Roll Number
+                    </span>
+
+                    <span id="rollNumber"
+                          class="value">
+                    </span>
+
+                </div>
+
+
+                <div class="profile-row">
+
+                    <span class="label">
+                        Email
+                    </span>
+
+                    <span id="email"
+                          class="value">
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Error -->
+
+            <div id="errorMessage"
+                 class="error-message">
+            </div>
+
+
+  <!-- Back Button -->
+            <div class="button-section">
+                <button
+                    type="button"
+                    id="dashboardButton">
+                    Back to Dashboard
+                </button>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- ==============================
+         Footer
+         ============================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <span>
+                IT-MockExams — Online Mock Examination Portal
+            </span>
+
+            <span>
+                &copy; 2026 IT-MockExams. All Rights Reserved.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/student/profile.js"></script>
+
+</body>
+
+</html>

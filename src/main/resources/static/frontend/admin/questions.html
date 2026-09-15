@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IT-MockExams - Manage Questions</title>
+
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+
+</head>
+
+<body>
+
+
+<header class="top-header">
+
+    <div class="header-container">
+
+        <div class="logo">
+            IT-MockExams
+        </div>
+
+        <div class="header-actions">
+
+            <span id="adminName">Admin</span>
+
+            <span class="separator">|</span>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <span class="separator">|</span>
+
+            <a href="#" id="logoutButton">
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="admin-container">
+
+
+    <!-- Page Header -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>Manage Questions</h1>
+
+            <p>
+                Add and manage questions for your exams.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Select Exam -->
+
+    <section class="form-section">
+
+        <h2>Select Exam</h2>
+
+        <div class="form-group">
+
+            <label for="examSelect">
+                Exam
+            </label>
+
+            <select id="examSelect">
+
+                <option value="">
+                    -- Select an Exam --
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- Add Question -->
+
+    <section
+        id="questionFormSection"
+        class="form-section hidden"
+    >
+
+        <h2 id="formTitle">
+            Add New Question
+        </h2>
+
+
+        <form id="questionForm">
+
+
+            <div class="form-group">
+
+                <label for="questionText">
+                    Question
+                </label>
+
+                <textarea
+                    id="questionText"
+                    placeholder="Enter your question"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <h3>Options</h3>
+
+
+            <div class="form-group">
+
+                <label for="optionA">
+                    Option A
+                </label>
+
+                <input
+                    type="text"
+                    id="optionA"
+                    placeholder="Enter option A"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="optionB">
+                    Option B
+                </label>
+
+                <input
+                    type="text"
+                    id="optionB"
+                    placeholder="Enter option B"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="optionC">
+                    Option C
+                </label>
+
+                <input
+                    type="text"
+                    id="optionC"
+                    placeholder="Enter option C"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="optionD">
+                    Option D
+                </label>
+
+                <input
+                    type="text"
+                    id="optionD"
+                    placeholder="Enter option D"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="correctAnswer">
+                    Correct Answer
+                </label>
+
+                <select id="correctAnswer" required>
+
+                    <option value="">
+                        -- Select Correct Answer --
+                    </option>
+
+                    <option value="A">
+                        A
+                    </option>
+
+                    <option value="B">
+                        B
+                    </option>
+
+                    <option value="C">
+                        C
+                    </option>
+
+                    <option value="D">
+                        D
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Save Question
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelButton"
+                    class="secondary-button"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </section>
+
+
+    <!-- Questions -->
+
+    <section class="table-section">
+
+
+        <div class="section-header">
+
+            <h2>
+                Questions
+            </h2>
+
+            <span id="questionCount">
+                0 Questions
+            </span>
+
+        </div>
+
+
+        <div id="questionsContainer">
+
+            <p>
+                Select an exam to view questions.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <span>
+            IT-MockExams — Online Mock Examination Portal
+        </span>
+
+        <span>
+            © 2026 IT-MockExams. All Rights Reserved.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="../js/admin/questions.js"></script>
+
+</body>
+
+</html>

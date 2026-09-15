@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Results - IT-MockExams</title>
+
+    <link rel="stylesheet"
+          href="../css/admin-dashboard.css">
+</head>
+
+<body>
+
+    <!-- ============================== -->
+    <!-- Header -->
+    <!-- ============================== -->
+
+    <header class="top-header">
+
+        <div class="header-container">
+
+            <div class="logo">
+                IT-MockExams
+            </div>
+
+            <div class="header-actions">
+
+                <span id="adminName">
+                    Admin
+                </span>
+
+                <span class="separator">|</span>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <span class="separator">|</span>
+
+                <a href="#"
+                   id="logoutButton">
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ============================== -->
+    <!-- Main Content -->
+    <!-- ============================== -->
+
+    <main class="admin-main">
+
+        <div class="page-header">
+
+            <h1>
+                Student Results
+            </h1>
+
+            <p>
+                View all student examination results
+            </p>
+
+        </div>
+
+
+        <!-- ============================== -->
+        <!-- Result Count -->
+        <!-- ============================== -->
+
+        <div class="admin-card">
+
+            <div class="card-header">
+
+                <h2>
+                    Examination Results
+                </h2>
+
+                <span id="resultCount">
+                    0 Results
+                </span>
+
+            </div>
+
+
+            <!-- ============================== -->
+            <!-- Results Table -->
+            <!-- ============================== -->
+
+            <div class="table-container">
+
+                <table class="results-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                #
+                            </th>
+
+                            <th>
+                                Student Email
+                            </th>
+
+                            <th>
+                                Exam
+                            </th>
+
+                            <th>
+                                Total Questions
+                            </th>
+
+                            <th>
+                                Correct
+                            </th>
+
+                            <th>
+                                Score
+                            </th>
+
+                            <th>
+                                Attempted At
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="resultsTableBody">
+
+                        <tr>
+
+                            <td colspan="7">
+                                Loading results...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ============================== -->
+    <!-- Footer -->
+    <!-- ============================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <span>
+                IT-MockExams — Online Mock Examination Portal
+            </span>
+
+            <span>
+                © 2026 IT-MockExams. All Rights Reserved.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ============================== -->
+    <!-- JavaScript -->
+    <!-- ============================== -->
+
+    <script src="../js/admin/results.js"></script>
+
+</body>
+
+</html>

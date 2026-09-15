@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IT-MockExams - Manage Exams</title>
+
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+</head>
+
+<body>
+
+<header class="top-header">
+
+    <div class="header-container">
+
+        <div class="logo">
+            IT-MockExams
+        </div>
+
+        <div class="header-actions">
+
+            <span id="adminName">Admin</span>
+
+            <span class="separator">|</span>
+
+            <a href="dashboard.html">Dashboard</a>
+
+            <span class="separator">|</span>
+
+            <a href="#" id="logoutButton">Logout</a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="admin-container">
+
+    <div class="page-header">
+
+        <div>
+            <h1>Manage Exams</h1>
+
+            <p>
+                Create, update and manage mock examinations.
+            </p>
+        </div>
+
+        <button id="addExamButton" class="primary-button">
+            + Add Exam
+        </button>
+
+    </div>
+
+
+    <!-- Add / Edit Exam Form -->
+
+    <section id="examFormSection" class="form-section hidden">
+
+        <h2 id="formTitle">Add New Exam</h2>
+
+        <form id="examForm">
+
+            <input type="hidden" id="examId">
+
+
+            <div class="form-group">
+
+                <label for="title">
+                    Exam Title
+                </label>
+
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Example: Java Fundamentals"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="description">
+                    Description
+                </label>
+
+                <textarea
+                    id="description"
+                    placeholder="Enter exam description"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="totalQuestions">
+                        Total Questions
+                    </label>
+
+                    <input
+                        type="number"
+                        id="totalQuestions"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="durationMinutes">
+                        Duration (Minutes)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="durationMinutes"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group checkbox-group">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="active"
+                        checked
+                    >
+
+                    Active Exam
+
+                </label>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Save Exam
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelButton"
+                    class="secondary-button"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- Exams Table -->
+
+    <section class="table-section">
+
+        <div class="section-header">
+
+            <h2>All Exams</h2>
+
+            <span id="examCount">
+                0 Exams
+            </span>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Exam</th>
+                        <th>Questions</th>
+                        <th>Duration</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="examTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <span>
+            IT-MockExams — Online Mock Examination Portal
+        </span>
+
+        <span>
+            © 2026 IT-MockExams. All Rights Reserved.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="../js/admin/exams.js"></script>
+
+</body>
+</html>

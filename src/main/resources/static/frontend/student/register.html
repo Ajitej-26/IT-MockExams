@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration | IT-MockExams</title>
+
+    <!-- CSS -->
+	<link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <!-- Registration Card -->
+        <div class="register-card">
+
+            <!-- Header -->
+            <div class="register-header">
+
+                <div class="logo">
+                    IT<span>-</span>MockExams
+                </div>
+
+                <h1>Create Your Account</h1>
+
+                <p>
+                    Register as a student and start practicing mock exams.
+                </p>
+
+            </div>
+
+
+            <!-- Registration Form -->
+            <form id="registerForm">
+
+                <!-- Full Name -->
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                    >
+
+                    <small class="error-message" id="fullNameError"></small>
+
+                </div>
+
+
+                <!-- College Roll Number -->
+                <div class="form-group">
+
+                    <label for="rollNumber">
+                        College Roll Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="rollNumber"
+                        name="rollNumber"
+                        placeholder="Example: 22R21A0501"
+                    >
+
+                    <small class="error-message" id="rollNumberError"></small>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                    >
+
+                    <small class="error-message" id="emailError"></small>
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="password-container">
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                    <small class="password-hint">
+                        Password must contain at least 6 characters.
+                    </small>
+
+                    <small class="error-message" id="passwordError"></small>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="password-container">
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="confirmPasswordToggle"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                    <small class="error-message" id="confirmPasswordError"></small>
+
+                </div>
+
+
+                <!-- Terms -->
+                <div class="terms-group">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                    >
+
+                    <label for="terms">
+                        I agree to the
+                        <a href="#" onclick="return false;">
+                            Terms & Conditions
+                        </a>
+                    </label>
+
+                </div>
+
+                <small class="error-message" id="termsError"></small>
+
+
+                <!-- Message -->
+                <div
+                    id="formMessage"
+                    class="form-message"
+                ></div>
+
+
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    class="register-button"
+                    id="registerButton"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <!-- Login Link -->
+            <div class="login-section">
+
+                <p>
+                    Already have an account?
+                    <a href="login.html">
+                        Sign In
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+	<script src="../js/student/register.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>IT-MockExams - Exam History</title>
+
+<link rel="stylesheet"
+      href="../css/history.css">
+
+
+</head>
+
+<body>
+<!-- ==============================
+     Header
+     ============================== -->
+
+<header class="history-header">
+
+    <div class="header-container">
+
+        <h1>IT-MockExams</h1>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==============================
+     Main Content
+     ============================== -->
+
+<main class="history-container">
+
+
+    <h2>
+        My Exam History
+    </h2>
+
+
+    <p class="subtitle">
+        View your previous mock exam attempts and scores.
+    </p>
+
+
+
+    <!-- Loading -->
+
+    <div id="loadingMessage">
+
+        Loading exam history...
+
+    </div>
+
+
+
+    <!-- History Table -->
+
+    <div class="table-container">
+
+        <table id="historyTable">
+
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+
+                    <th>Exam</th>
+
+                    <th>Score</th>
+
+                    <th>Correct Answers</th>
+
+                    <th>Total Questions</th>
+
+                    <th>Percentage</th>
+
+                    <th>Attempted At</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="historyBody">
+
+            </tbody>
+
+
+        </table>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ==============================
+     Footer
+     ============================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <span>
+            IT-MockExams — Online Mock Examination Portal
+        </span>
+
+        <span>
+            &copy; 2026 IT-MockExams. All Rights Reserved.
+        </span>
+
+    </div>
+</footer>
+<script src="../js/student/history.js"></script>
+</body>
+</html>
