@@ -7,62 +7,45 @@ import com.ittest.exam.repository.ExamRepository;
 
 @Service
 public class ExamService {
-
     private final ExamRepository examRepository;
 
     public ExamService(ExamRepository examRepository) {
         this.examRepository = examRepository;
     }
 
-    // Student - available exams
-
+// Student - available exams
     public List<Exam> getAvailableExams() {
-
         return examRepository.findByActiveTrue();
     }
 
-
-    // Admin - all exams
-
+// Admin - all exams
     public List<Exam> getAllExams() {
-
         return examRepository.findAll();
     }
 
-
-    // Admin - add exam
-
+// Admin - add exam
     public Exam addExam(Exam exam) {
-
         return examRepository.save(exam);
     }
 
-
-    // Admin - find exam
-
+// Admin - find exam
     public Exam getExamById(Long id) {
-
         return examRepository
                 .findById(id)
                 .orElse(null);
     }
 
-
-    // Admin - update exam
-
+// Admin - update exam
     public Exam updateExam(
             Long id,
             Exam examDetails) {
-
         Exam exam =
                 examRepository
                     .findById(id)
                     .orElse(null);
-
         if (exam == null) {
             return null;
         }
-
         exam.setTitle(
                 examDetails.getTitle()
         );
