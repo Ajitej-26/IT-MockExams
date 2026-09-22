@@ -1,10 +1,4 @@
-server:
-  port: ${PORT:8080}
-
 spring:
-  application:
-    name: exam
-
   datasource:
     url: jdbc:mysql://${MYSQLHOST}:${MYSQLPORT}/${MYSQLDATABASE}
     username: ${MYSQLUSER}
@@ -14,4 +8,4 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: false
+    show-sql: true
