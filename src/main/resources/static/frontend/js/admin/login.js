@@ -29,15 +29,15 @@ loginForm.addEventListener(
         errorMessage.innerText = "";
 
 
-        fetch(
-            "/api/admin/login?email=" +
-            encodeURIComponent(email) +
-            "&password=" +
-            encodeURIComponent(password),
-            {
-                method: "POST"
-            }
-        )
+      fetch(
+    "https://it-mockexams-production.up.railway.app/api/admin/login?email=" +
+    encodeURIComponent(email) +
+    "&password=" +
+    encodeURIComponent(password),
+    {
+        method: "POST"
+    }
+)
 
         .then(response => {
 
