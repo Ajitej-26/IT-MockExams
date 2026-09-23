@@ -1,6 +1,5 @@
 let questions = [];
 
-
 // ==============================
 // Get Exam ID
 // ==============================
@@ -15,6 +14,52 @@ console.log("Exam ID:", examId);
 
 
 // ==============================
+// Exam Timer
+// ==============================
+
+let timeLeft = 30 * 60;
+let timerInterval;
+
+function startTimer() {
+
+    const timerElement =
+        document.getElementById("timer");
+
+    timerInterval = setInterval(() => {
+
+        const minutes =
+            Math.floor(timeLeft / 60);
+
+        const seconds =
+            timeLeft % 60;
+
+        timerElement.innerText =
+            String(minutes).padStart(2, "0") +
+            ":" +
+            String(seconds).padStart(2, "0");
+
+        if (timeLeft <= 0) {
+
+            clearInterval(timerInterval);
+
+            timerElement.innerText = "00:00";
+
+            alert(
+                "Time is up! Your exam will be submitted automatically."
+            );
+
+            submitExam(true);
+
+            return;
+        }
+
+        timeLeft--;
+
+    }, 1000);
+}
+
+
+// ==============================
 // Load Questions
 // ==============================
 
@@ -24,7 +69,9 @@ function loadQuestions() {
 
     if (!examId) {
 
-        document.getElementById("loadingMessage").innerText =
+        document.getElementById(
+            "loadingMessage"
+        ).innerText =
             "Exam ID not found.";
 
         return;
@@ -91,7 +138,6 @@ function displayQuestions(data) {
 
     container.innerHTML = "";
 
-
     data.forEach((question, index) => {
 
         const questionCard =
@@ -100,9 +146,7 @@ function displayQuestions(data) {
         questionCard.className =
             "question-card";
 
-
         let optionsHTML = "";
-
 
         question.options.forEach(option => {
 
@@ -122,7 +166,6 @@ function displayQuestions(data) {
             `;
         });
 
-
         questionCard.innerHTML = `
 
             <div class="question-number">
@@ -139,7 +182,6 @@ function displayQuestions(data) {
 
         `;
 
-
         container.appendChild(questionCard);
 
     });
@@ -150,181 +192,168 @@ function displayQuestions(data) {
 // Submit Exam
 // ==============================
 
+function submitExam(autoSubmit = false) {
+
+    const answers = {};
+
+    questions.forEach(question => {
+
+        const selectedOption =
+            document.querySelector(
+                `input[name="question-${question.id}"]:checked`
+            );
+
+        if (selectedOption) {
+
+            answers[question.id] =
+                selectedOption.value;
+        }
+
+    });
+
+
+    console.log("Student Answers:");
+    console.log(answers);
+
+
+    // Manual submission requires
+    // all questions answered
+
+    if (
+        !autoSubmit &&
+        Object.keys(answers).length !== questions.length
+    ) {
+
+        alert(
+            "Please answer all questions before submitting."
+        );
+
+        return;
+    }
+
+
+    clearInterval(timerInterval);
+
+
+    // ==============================
+    // Student Email
+    // ==============================
+
+    const email =
+        sessionStorage.getItem("userEmail");
+
+
+    if (!email) {
+
+        alert(
+            "Student login session not found. Please login again."
+        );
+
+        window.location.href =
+            "login.html";
+
+        return;
+    }
+
+
+    // ==============================
+    // Result Request
+    // ==============================
+
+    const resultRequest = {
+
+        examId: Number(examId),
+
+        email: email,
+
+        answers: answers
+    };
+
+
+    console.log(
+        "Sending Result Request:"
+    );
+
+    console.log(resultRequest);
+
+
+    // ==============================
+    // Send Result
+    // ==============================
+
+    fetch("/api/results/submit", {
+
+        method: "POST",
+
+        headers: {
+
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(resultRequest)
+
+    })
+
+    .then(response => {
+
+        console.log(
+            "Result API Status:",
+            response.status
+        );
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Result submission failed"
+            );
+        }
+
+        return response.json();
+
+    })
+
+    .then(result => {
+
+        console.log(
+            "Backend Result:"
+        );
+
+        console.log(result);
+
+
+        sessionStorage.setItem(
+            "examResult",
+            JSON.stringify(result)
+        );
+
+
+        window.location.href =
+            "result.html";
+
+    })
+
+    .catch(error => {
+
+        console.error(
+            "Result submission error:",
+            error
+        );
+
+        alert(
+            "Something went wrong while submitting the exam."
+        );
+    });
+}
+
+
+// ==============================
+// Submit Button
+// ==============================
+
 document.getElementById("submitBtn")
     .addEventListener("click", function () {
 
-        const answers = {};
-
-
-        // Collect selected answers
-
-        questions.forEach(question => {
-
-            const selectedOption =
-                document.querySelector(
-                    `input[name="question-${question.id}"]:checked`
-                );
-
-            if (selectedOption) {
-
-                answers[question.id] =
-                    selectedOption.value;
-
-            }
-
-        });
-
-
-        // Debug
-
-        console.log(
-            "================================="
-        );
-
-        console.log("Student Answers:");
-
-        console.log(answers);
-
-        console.log(
-            "================================="
-        );
-
-
-        // Check all questions answered
-
-        if (
-            Object.keys(answers).length
-            !== questions.length
-        ) {
-
-            alert(
-                "Please answer all questions before submitting."
-            );
-
-            return;
-        }
-
-
-        // Get logged-in student's email
-
-        const email =
-            sessionStorage.getItem("userEmail");
-
-
-        // Check login session
-
-        if (!email) {
-
-            alert(
-                "Student login session not found. Please login again."
-            );
-
-            window.location.href =
-                "login.html";
-
-            return;
-        }
-
-
-        // Create request
-
-        const resultRequest = {
-
-            examId: Number(examId),
-
-            email: email,
-
-            answers: answers
-
-        };
-
-
-        console.log(
-            "Sending Result Request:"
-        );
-
-        console.log(resultRequest);
-
-
-        // Send result to backend
-
-        fetch("/api/results/submit", {
-
-            method: "POST",
-
-            headers: {
-
-                "Content-Type": "application/json"
-
-            },
-
-            body: JSON.stringify(resultRequest)
-
-        })
-
-        .then(response => {
-
-            console.log(
-                "Result API Status:",
-                response.status
-            );
-
-            if (!response.ok) {
-
-                throw new Error(
-                    "Result submission failed"
-                );
-
-            }
-
-            return response.json();
-
-        })
-
-        .then(result => {
-
-            console.log(
-                "================================="
-            );
-
-            console.log(
-                "Backend Result:"
-            );
-
-            console.log(result);
-
-            console.log(
-                "================================="
-            );
-
-
-            // Store result
-
-            sessionStorage.setItem(
-                "examResult",
-                JSON.stringify(result)
-            );
-
-
-            // Open result page
-
-            window.location.href =
-                "result.html";
-
-        })
-
-        .catch(error => {
-
-            console.error(
-                "Result submission error:",
-                error
-            );
-
-            alert(
-                "Something went wrong while submitting the exam."
-            );
-
-        });
+        submitExam(false);
 
     });
 
@@ -334,3 +363,5 @@ document.getElementById("submitBtn")
 // ==============================
 
 loadQuestions();
+
+startTimer();
