@@ -70,12 +70,22 @@ body {
     cursor: pointer;
 }
 
+.profile-link,
+.history-link,
+.logout-link {
+    color: #374151;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
 .profile-link:hover,
+.history-link:hover,
 .logout-link:hover {
     color: #2563eb;
     text-decoration: underline;
 }
-
 
 /* =========================================
    Dashboard Container
@@ -143,52 +153,6 @@ body {
     font-weight: bold;
     color: #111827;
 }
-
-
-/* =========================================
-   Quick Actions
-   ========================================= */
-
-.quick-actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 25px;
-}
-
-
-/* =========================================
-   Exam History Button
-   ========================================= */
-
-.history-button {
-    display: inline-block;
-
-    background-color: #3b82f6;
-    color: white;
-
-    text-decoration: none;
-
-    padding: 12px 20px;
-
-    border-radius: 6px;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.history-button:hover {
-    background-color: #2563eb;
-    transform: translateY(-2px);
-}
-
-.history-button:active {
-    transform: translateY(0);
-}
-
 
 /* =========================================
    Exams Section
@@ -347,37 +311,38 @@ body {
     color: #dc2626;
 }
 
-
-/* =========================================
-   Footer
-   ========================================= */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .site-footer {
-    margin-top: 20px;
+    background: #111827;
 
-    border-top: 1px solid #e5e7eb;
+    color: #94a3b8;
 
-    background: #ffffff;
+    padding: 25px 20px;
+
+    text-align: center;
 }
 
 .footer-container {
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1100px;
 
     margin: auto;
-
-    padding: 20px 25px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    font-size: 12px;
-
-    color: #6b7280;
 }
 
+.footer-container .copyright {
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    margin: 0;
+
+    padding: 0;
+
+    border-top: none;
+}
 
 /* =========================================
    Responsive - Tablet
@@ -388,7 +353,19 @@ body {
     .stats-grid {
         grid-template-columns: 1fr;
     }
- @media (max-width: 600px) {
+
+    .exam-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================
+   Responsive - Mobile
+   ========================================= */
+
+@media (max-width: 600px) {
 
     .header-container {
         padding: 15px;
@@ -404,8 +381,18 @@ body {
 
     .header-actions #studentName,
     .profile-link,
+    .history-link,
     .logout-link {
         font-size: 12px;
     }
-}
+
+    .dashboard-container {
+        padding: 30px 15px;
+    }
+
+    .welcome-section h1,
+    .welcome-section h2 {
+        font-size: 24px;
+    }
+
 }

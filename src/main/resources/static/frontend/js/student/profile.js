@@ -19,7 +19,6 @@ if (!email) {
 
     window.location.href =
         "login.html";
-
 }
 
 
@@ -70,7 +69,6 @@ function loadProfile() {
 
 
             // Full Name
-
             document.getElementById(
                 "fullName"
             ).innerText =
@@ -78,7 +76,6 @@ function loadProfile() {
 
 
             // Roll Number
-
             document.getElementById(
                 "rollNumber"
             ).innerText =
@@ -86,7 +83,6 @@ function loadProfile() {
 
 
             // Email
-
             document.getElementById(
                 "email"
             ).innerText =
@@ -94,7 +90,6 @@ function loadProfile() {
 
 
             // Hide Loading
-
             document.getElementById(
                 "loadingMessage"
             ).style.display =
@@ -102,7 +97,6 @@ function loadProfile() {
 
 
             // Show Profile
-
             document.getElementById(
                 "profileDetails"
             ).style.display =
@@ -132,23 +126,6 @@ function loadProfile() {
         });
 
 }
-
-
-// ==============================
-// Dashboard Button
-// ==============================
-
-document.getElementById(
-    "dashboardButton"
-).addEventListener(
-    "click",
-    function () {
-
-        window.location.href =
-            "dashboard.html";
-
-    }
-);
 
 
 // ==============================

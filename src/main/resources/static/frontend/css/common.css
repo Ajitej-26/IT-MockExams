@@ -1,11 +1,57 @@
 /* =========================================================
-   IT-MockExams - Common Styles
-========================================================= */
+   IT-MOCKEXAMS
+   Clean Professional CSS
+   ========================================================= */
+
+/* ---------- GOOGLE FONT ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 
 /* =========================================================
-   RESET
-========================================================= */
+   GLOBAL
+   ========================================================= */
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --secondary: #7c3aed;
+
+    --text-dark: #111827;
+    --text-medium: #4b5563;
+    --text-light: #6b7280;
+
+    --background: #f8fafc;
+    --white: #ffffff;
+    --border: #e5e7eb;
+
+    --gradient: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    --gradient-light: linear-gradient(
+        135deg,
+        #eef2ff,
+        #f5f3ff
+    );
+
+    --shadow-sm:
+        0 4px 15px rgba(79, 70, 229, 0.07);
+
+    --shadow-md:
+        0 10px 30px rgba(79, 70, 229, 0.12);
+
+    --shadow-lg:
+        0 20px 50px rgba(79, 70, 229, 0.18);
+
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+}
+
+
+/* ---------- RESET ---------- */
 
 * {
     margin: 0;
@@ -15,335 +61,208 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f7fb;
-    color: #222;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text-dark);
     min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 
 /* =========================================================
    HEADER
-========================================================= */
+   ========================================================= */
 
 .main-header {
     width: 100%;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--border);
+
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .header-container {
     width: 90%;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1250px;
+    min-height: 78px;
 
-    min-height: 72px;
+    margin: auto;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    gap: 25px;
 }
 
 
-/* Logo */
+/* ---------- LOGO ---------- */
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: #1d4ed8;
-    letter-spacing: 0.3px;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1px;
+
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 
-/* Navigation */
+/* ---------- NAVIGATION ---------- */
 
 .navbar {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 35px;
 }
 
 .nav-link {
+    position: relative;
+
     text-decoration: none;
-    color: #444;
-    font-size: 15px;
-    font-weight: 500;
 
-    transition: 0.3s;
+    color: var(--text-medium);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 10px 0;
+
+    transition: color 0.25s ease;
 }
 
-.nav-link:hover {
-    color: #1d4ed8;
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+
+    width: 0;
+    height: 3px;
+
+    border-radius: 10px;
+
+    background: var(--gradient);
+
+    transition: width 0.25s ease;
 }
 
+.nav-link:hover,
 .nav-link.active {
-    color: #1d4ed8;
+    color: var(--primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
 }
 
 
 /* =========================================================
-   HERO SECTION
-========================================================= */
+   HERO
+   ========================================================= */
 
 .hero-section {
-    min-height: 620px;
-
-    display: flex;
-    align-items: center;
+    min-height: 500px;
 
     background:
         linear-gradient(
-            135deg,
-            #f8fbff 0%,
-            #eef4ff 100%
+            180deg,
+            #f8fafc 0%,
+            #eef2ff 100%
         );
+
+    display: flex;
+    align-items: center;
 }
 
 .hero-container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1100px;
+
     margin: auto;
+    padding: 75px 0;
 
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-
-    gap: 70px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 800px;
 }
 
 
-/* Hero Content */
+/* ---------- SMALL TITLE ---------- */
 
 .hero-small-title {
-    color: #1d4ed8;
-    font-size: 13px;
-    font-weight: 700;
+    display: inline-block;
 
-    letter-spacing: 1.5px;
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
     margin-bottom: 18px;
 }
 
+
+/* ---------- MAIN HEADING ---------- */
+
 .hero-content h1 {
-    font-size: 52px;
-    line-height: 1.12;
+    font-size: clamp(38px, 5vw, 60px);
+
+    line-height: 1.1;
+
     font-weight: 800;
 
-    color: #172033;
+    letter-spacing: -2px;
 
-    margin-bottom: 25px;
+    margin-bottom: 22px;
+
+    color: var(--text-dark);
 }
 
-.hero-content h1 span {
-    color: #1d4ed8;
-}
+
+/* ---------- DESCRIPTION ---------- */
 
 .hero-description {
-    max-width: 600px;
+    max-width: 700px;
 
-    color: #606b7a;
-    font-size: 17px;
-    line-height: 1.7;
+    margin: 0 auto 30px;
 
-    margin-bottom: 32px;
-}
-
-
-/* =========================================================
-   HERO BUTTONS
-========================================================= */
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.primary-button,
-.secondary-button {
-    display: inline-block;
-
-    padding: 13px 24px;
-
-    border-radius: 7px;
-
-    text-decoration: none;
-
-    font-size: 15px;
-    font-weight: 600;
-
-    transition: 0.3s;
-}
-
-
-/* Primary */
-
-.primary-button {
-    background-color: #1d4ed8;
-    color: #ffffff;
-}
-
-.primary-button:hover {
-    background-color: #163fae;
-    transform: translateY(-2px);
-}
-
-
-/* Secondary */
-
-.secondary-button {
-    background-color: #ffffff;
-    color: #1d4ed8;
-
-    border: 1px solid #1d4ed8;
-}
-
-.secondary-button:hover {
-    background-color: #eef4ff;
-    transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   HERO VISUAL
-========================================================= */
-
-.hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.exam-card {
-    width: 320px;
-    min-height: 330px;
-
-    background-color: #ffffff;
-
-    border-radius: 20px;
-
-    padding: 40px 30px;
-
-    text-align: center;
-
-    box-shadow:
-        0 20px 50px rgba(30, 64, 175, 0.12);
-
-    border: 1px solid #e5eaf5;
-
-    transition: 0.3s;
-}
-
-.exam-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 25px 60px rgba(30, 64, 175, 0.18);
-}
-
-
-/* Monitor Icon */
-
-.monitor-icon {
-    width: 90px;
-    height: 90px;
-
-    margin: 0 auto 25px;
-
-    border-radius: 20px;
-
-    background-color: #eef4ff;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 45px;
-}
-
-.exam-card h2 {
-    color: #172033;
-    font-size: 23px;
-
-    margin-bottom: 8px;
-}
-
-.exam-card > p {
-    color: #687386;
-    font-size: 15px;
-}
-
-
-/* Card Line */
-
-.card-line {
-    width: 60px;
-    height: 3px;
-
-    background-color: #1d4ed8;
-
-    margin: 22px auto;
-}
-
-
-/* Exam Information */
-
-.exam-info {
-    display: flex;
-    flex-direction: column;
-
-    gap: 10px;
-
-    color: #4b5563;
-
-    font-size: 14px;
-}
-
-
-/* =========================================================
-   ABOUT SECTION
-========================================================= */
-
-.about-section {
-    background-color: #ffffff;
-
-    padding: 90px 20px;
-
-    text-align: center;
-}
-
-.about-container {
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-}
-
-.section-label {
-    color: #1d4ed8;
-
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-
-    margin-bottom: 12px;
-}
-
-.about-container h2 {
-    font-size: 34px;
-
-    color: #172033;
-
-    margin-bottom: 20px;
-}
-
-.about-container > p:last-child {
-    color: #687386;
+    color: var(--text-medium);
 
     font-size: 16px;
 
@@ -352,141 +271,381 @@ body {
 
 
 /* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 14px 28px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* ---------- PRIMARY ---------- */
+
+.primary-button {
+    background: var(--gradient);
+
+    color: var(--white);
+
+    border: 1px solid transparent;
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 28px rgba(79, 70, 229, 0.32);
+}
+
+
+/* ---------- SECONDARY ---------- */
+
+.secondary-button {
+    background: var(--white);
+
+    color: var(--primary);
+
+    border: 1px solid rgba(79, 70, 229, 0.25);
+}
+
+.secondary-button:hover {
+    transform: translateY(-3px);
+
+    background: #ffffff;
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   HERO VISUAL
+   ========================================================= */
+
+.hero-visual {
+    display: none;
+}
+
+
+/* =========================================================
+   ABOUT SECTION
+   ========================================================= */
+
+.about-section {
+    background: var(--white);
+
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+.about-container {
+    width: 90%;
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.section-label {
+    display: inline-block;
+
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+.about-container h2 {
+    color: var(--text-dark);
+
+    font-size: clamp(30px, 4vw, 44px);
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
+    line-height: 1.2;
+
+    margin-bottom: 25px;
+}
+
+.about-container > p:last-child {
+    max-width: 780px;
+
+    margin: auto;
+
+    color: var(--text-medium);
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
    LOGIN SECTION
-========================================================= */
+   ========================================================= */
 
 .login-section {
-    background-color: #f5f7fb;
+    background:
+        linear-gradient(
+            135deg,
+            #f8faff 0%,
+            #eef2ff 100%
+        );
 
-    padding: 90px 20px;
+    padding: 100px 20px;
 
     text-align: center;
 }
 
 .login-container {
     width: 90%;
-    max-width: 900px;
+    max-width: 1000px;
+
     margin: auto;
 }
 
 .login-container h2 {
-    font-size: 34px;
+    color: var(--text-dark);
 
-    color: #172033;
+    font-size: clamp(30px, 4vw, 44px);
 
-    margin-bottom: 12px;
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 15px;
 }
 
 .login-container > p:not(.section-label) {
-    color: #687386;
+    color: var(--text-medium);
 
-    margin-bottom: 40px;
+    font-size: 15px;
+
+    margin-bottom: 50px;
 }
 
 
-/* Login Cards */
+/* ---------- LOGIN CARDS ---------- */
 
 .login-options {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-    gap: 25px;
+    gap: 30px;
 
-    max-width: 700px;
+    max-width: 800px;
 
     margin: auto;
 }
 
 .login-card {
-    background-color: #ffffff;
+    position: relative;
 
-    padding: 32px 25px;
+    background: rgba(255, 255, 255, 0.96);
 
-    border-radius: 14px;
+    padding: 40px 30px;
 
-    border: 1px solid #e5e7eb;
+    border-radius: 22px;
 
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
 
-    transition: 0.3s;
+    box-shadow: var(--shadow-sm);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* ---------- CARD TOP LINE ---------- */
+
+.login-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: var(--gradient);
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
 }
 
 .login-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
 
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-lg);
+
+    border-color:
+        rgba(79, 70, 229, 0.2);
+}
+
+.login-card:hover::before {
+    transform: scaleX(1);
 }
 
 
-/* Login Icon */
+/* ---------- LOGIN ICON ---------- */
 
 .login-icon {
-    font-size: 38px;
+    width: 85px;
+    height: 85px;
 
-    margin-bottom: 15px;
+    margin: 0 auto 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--gradient-light);
+
+    border-radius: 22px;
+
+    font-size: 40px;
+
+    transition:
+        transform 0.3s ease;
 }
+
+.login-card:hover .login-icon {
+    transform:
+        scale(1.06)
+        rotate(-3deg);
+}
+
+
+/* ---------- CARD TITLE ---------- */
 
 .login-card h3 {
-    color: #172033;
+    color: var(--text-dark);
 
-    font-size: 22px;
+    font-size: 24px;
 
-    margin-bottom: 12px;
+    font-weight: 800;
+
+    margin-bottom: 14px;
 }
 
+
+/* ---------- CARD DESCRIPTION ---------- */
+
 .login-card p {
-    color: #687386;
+    color: var(--text-medium);
 
     font-size: 14px;
 
-    line-height: 1.6;
+    line-height: 1.8;
 
-    min-height: 45px;
+    min-height: 55px;
 
-    margin-bottom: 22px;
+    margin-bottom: 28px;
 }
 
 
-/* Login Button */
+/* ---------- LOGIN BUTTON ---------- */
 
 .login-button {
-    display: inline-block;
+    display: inline-flex;
 
-    padding: 11px 22px;
+    align-items: center;
+    justify-content: center;
 
-    background-color: #1d4ed8;
+    min-height: 48px;
 
-    color: #ffffff;
+    padding: 12px 28px;
+
+    background: var(--gradient);
+
+    color: var(--white);
 
     text-decoration: none;
 
-    border-radius: 6px;
+    border-radius: 9px;
 
     font-size: 14px;
 
-    font-weight: 600;
+    font-weight: 700;
 
-    transition: 0.3s;
+    box-shadow:
+        0 6px 18px rgba(79, 70, 229, 0.20);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .login-button:hover {
-    background-color: #163fae;
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.30);
 }
 
 
 /* =========================================================
    FOOTER
-========================================================= */
+   ========================================================= */
 
 .site-footer {
-    background-color: #172033;
+    background: #111827;
 
-    color: #ffffff;
+    color: #94a3b8;
 
-    padding: 30px 20px;
+    padding: 25px 20px;
 
     text-align: center;
 }
@@ -498,76 +657,70 @@ body {
     margin: auto;
 }
 
-.footer-logo {
-    font-size: 20px;
-    font-weight: 700;
-
-    margin-bottom: 8px;
-}
-
-.footer-container p {
-    color: #b8c0cf;
-
-    font-size: 14px;
-
-    margin-bottom: 8px;
-}
-
 .footer-container .copyright {
-    color: #8f9aaa;
+    color: #94a3b8;
 
     font-size: 13px;
 
-    margin-top: 12px;
+    margin: 0;
+
+    padding: 0;
+
+    border-top: none;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+a:focus-visible {
+    outline: 3px solid #06b6d4;
+
+    outline-offset: 4px;
+
+    border-radius: 5px;
 }
 
 
 /* =========================================================
-   RESPONSIVE DESIGN
-========================================================= */
-
-
-/* Tablet */
+   TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
 
+    .header-container {
+        width: 92%;
+    }
+
     .hero-container {
-        grid-template-columns: 1fr;
-
-        text-align: center;
-
-        gap: 50px;
-
         padding: 70px 0;
-    }
-
-    .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-visual {
-        margin-bottom: 20px;
     }
 
     .hero-content h1 {
         font-size: 42px;
     }
+
+    .about-section,
+    .login-section {
+        padding: 80px 20px;
+    }
 }
 
 
-/* Mobile */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
+
+    /* ---------- HEADER ---------- */
 
     .header-container {
         width: 92%;
 
-        min-height: 65px;
+        min-height: 68px;
+
+        gap: 15px;
     }
 
     .logo {
@@ -575,47 +728,49 @@ body {
     }
 
     .navbar {
-        gap: 15px;
+        gap: 16px;
     }
 
     .nav-link {
-        font-size: 13px;
+        font-size: 12px;
     }
 
-    .hero-section {
-        min-height: auto;
-    }
+
+    /* ---------- HERO ---------- */
 
     .hero-container {
         width: 92%;
 
-        padding: 60px 0;
+        padding: 65px 0;
+    }
+
+    .hero-small-title {
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 18px;
     }
 
     .hero-content h1 {
         font-size: 34px;
+
+        letter-spacing: -1px;
     }
 
     .hero-description {
-        font-size: 15px;
+        font-size: 14px;
+
+        line-height: 1.8;
     }
 
-    .exam-card {
-        width: 280px;
-    }
 
-    .about-section,
-    .login-section {
-        padding: 65px 20px;
-    }
+    /* ---------- BUTTONS ---------- */
 
-    .about-container h2,
-    .login-container h2 {
-        font-size: 28px;
-    }
+    .hero-buttons {
+        flex-direction: column;
 
-    .login-options {
-        grid-template-columns: 1fr;
+        width: 100%;
     }
 
     .primary-button,
@@ -623,7 +778,105 @@ body {
         width: 100%;
     }
 
-    .hero-buttons {
-        flex-direction: column;
+
+    /* ---------- ABOUT ---------- */
+
+    .about-section,
+    .login-section {
+        padding: 65px 18px;
+    }
+
+    .about-container,
+    .login-container {
+        width: 100%;
+    }
+
+    .about-container h2,
+    .login-container h2 {
+        font-size: 30px;
+    }
+
+    .about-container > p:last-child {
+        font-size: 14px;
+    }
+
+
+    /* ---------- LOGIN ---------- */
+
+    .login-options {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .login-card {
+        padding: 35px 24px;
+    }
+
+    .login-card p {
+        min-height: auto;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .site-footer {
+        padding: 40px 18px;
+    }
+
+    .footer-logo {
+        font-size: 22px;
+    }
+
+    .footer-container p {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .navbar {
+        gap: 11px;
+    }
+
+    .nav-link {
+        font-size: 11px;
+    }
+
+    .hero-content h1 {
+        font-size: 29px;
+    }
+
+    .hero-small-title {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
     }
 }

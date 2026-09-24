@@ -4,42 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Student Registration | IT-MockExams</title>
-
     <!-- CSS -->
 	<link rel="stylesheet" href="../css/register.css">
 </head>
-
 <body>
-
     <div class="page-container">
-
-        <!-- Registration Card -->
+<!-- Registration Card -->
         <div class="register-card">
-
-            <!-- Header -->
+<!-- Header -->
             <div class="register-header">
-
                 <div class="logo">
                     IT<span>-</span>MockExams
                 </div>
-
                 <h1>Create Your Account</h1>
-
                 <p>
                     Register as a student and start practicing mock exams.
                 </p>
-
             </div>
 
-
-            <!-- Registration Form -->
+<!-- Registration Form -->
             <form id="registerForm">
-
-                <!-- Full Name -->
+<!-- Full Name -->
                 <div class="form-group">
-
                     <label for="fullName">
                         Full Name
                     </label>
@@ -57,9 +44,8 @@
                 </div>
 
 
-                <!-- College Roll Number -->
+<!-- College Roll Number -->
                 <div class="form-group">
-
                     <label for="rollNumber">
                         College Roll Number
                     </label>
@@ -96,15 +82,13 @@
                 </div>
 
 
-                <!-- Password -->
+<!-- Password -->
                 <div class="form-group">
-
                     <label for="password">
                         Password
                     </label>
 
                     <div class="password-container">
-
                         <input
                             type="password"
                             id="password"
@@ -120,27 +104,20 @@
                         >
                             Show
                         </button>
-
                     </div>
-
                     <small class="password-hint">
                         Password must contain at least 6 characters.
                     </small>
-
                     <small class="error-message" id="passwordError"></small>
-
                 </div>
 
-
-                <!-- Confirm Password -->
+<!-- Confirm Password -->
                 <div class="form-group">
-
                     <label for="confirmPassword">
                         Confirm Password
                     </label>
 
                     <div class="password-container">
-
                         <input
                             type="password"
                             id="confirmPassword"
@@ -156,43 +133,34 @@
                         >
                             Show
                         </button>
-
                     </div>
-
                     <small class="error-message" id="confirmPasswordError"></small>
-
                 </div>
 
 
-                <!-- Terms -->
+<!-- Terms -->
                 <div class="terms-group">
-
                     <input
                         type="checkbox"
                         id="terms"
                         name="terms"
                     >
-
                     <label for="terms">
                         I agree to the
                         <a href="#" onclick="return false;">
                             Terms & Conditions
                         </a>
                     </label>
-
                 </div>
-
                 <small class="error-message" id="termsError"></small>
 
-
-                <!-- Message -->
+<!-- Message -->
                 <div
                     id="formMessage"
                     class="form-message"
                 ></div>
 
-
-                <!-- Submit -->
+<!-- Submit -->
                 <button
                     type="submit"
                     class="register-button"
@@ -200,26 +168,19 @@
                 >
                     Create Account
                 </button>
-
             </form>
 
-
-            <!-- Login Link -->
+<!-- Login Link -->
             <div class="login-section">
-
                 <p>
                     Already have an account?
                     <a href="login.html">
                         Sign In
                     </a>
                 </p>
-
             </div>
-
         </div>
-
     </div>
-
 
     <!-- JavaScript -->
 	<script src="../js/student/register.js"></script>

@@ -188,36 +188,38 @@ body {
     font-weight: bold;
 }
 
-
-/* ==============================
-   Footer
-   ============================== */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .site-footer {
-    background-color: #1e293b;
+    background: #111827;
 
-    color: #cbd5e1;
+    color: #94a3b8;
 
-    padding: 18px 0;
+    padding: 25px 20px;
 
-    margin-top: auto;
+    text-align: center;
 }
 
-.site-footer .container {
+.footer-container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1100px;
 
     margin: auto;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    font-size: 13px;
 }
 
+.footer-container .copyright {
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    margin: 0;
+
+    padding: 0;
+
+    border-top: none;
+}
 
 /* ==============================
    Responsive Design
